@@ -1,0 +1,297 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+
+  <link rel="preconnect" href="https://app.snipcart.com">
+  <link rel="preconnect" href="https://cdn.snipcart.com">
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.1.0/default/snipcart.css" />
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- CSS - END -->
+
+  <title>GrubKing - About</title>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <!--===== NAVIGATION BAR =====-->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+    <div class="container-fluid fs-3">
+
+      <a class="navbar-brand fs-3" href="index.html"><img src="images/gk.png"></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmob"
+        aria-controls="navmob" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navmob">
+        <div class="navbar-nav mr-auto">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="menu.html">Menu</a>
+          <a class="nav-link active" href="about.html">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </div>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navmob">
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" id="loginBtn" href="" data-bs-toggle="modal" data-bs-target="#userLoginPortal">Login</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="displayUser" role="button" data-bs-toggle="dropdown">Username</a>
+            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end" aria-labelledby="logout">
+              <a href="" class="dropdown-item" onclick="logout()">Log Out</a>
+            </ul>
+          </li>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </nav>
+  <!--===== NAVIGATION BAR - END =====-->
+
+  <!--===== USER LOGIN FORM =====-->
+  <div class="modal fade" id="userLoginPortal" tabindex="-1" aria-labelledby="userLoginModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="userLoginModal">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form id="login-form" class="needs-validation" onsubmit="return false">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="username" minlength="4" placeholder=" " required>
+              <label for="username">Username</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="userpassword" placeholder=" ">
+              <label for="userpassword">Password (optional)</label>
+            </div>
+            <button type="submit" class="btn btn-danger" onclick="login()">Log in</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WELCOME MODAL -->
+  <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <div class="f-modal-alert">
+            <div class="f-modal-icon f-modal-success animate">
+              <span class="f-modal-line f-modal-tip animateSuccessTip"></span>
+              <span class="f-modal-line f-modal-long animateSuccessLong"></span>
+              <div class="f-modal-placeholder"></div>
+              <div class="f-modal-fix"></div>
+            </div>
+          </div>
+          <h1>WELCOME!</h1>
+          <h6>You Are Logged in!</h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Okay!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--===== USER LOGIN FORM - END =====-->
+
+  <!--===== HERO SECTION =====-->
+  <section class="hero">
+    <img src="images/hero/hero-about.jpg">
+  </section>
+  <!--===== HERO SECTION - END =====-->
+
+  <!--===== ABOUT SECTION =====-->
+  <section class="about">
+    <div class="container">
+      <div class="facts">
+        <h1>Facts</h1>
+        <div class="row g-5">
+          <div class="col-md-6 col-lg-3">
+            <h2>12</h2>
+            <h5>Awards</h5>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <h2>10,000+</h2>
+            <h5>Happy Customers</h5>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <h2>100+</h2>
+            <h5>Regular Users</h5>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <h2>56</h2>
+            <h5>Rides</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <div class="fact2-box">
+            <h3>What We Do?</h3>
+            <p>We deliver food at your doorstep!</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="fact2-box">
+            <h3>Who We Are?</h3>
+            <p>We are the best food delivering service provider in town since 2020!</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="fact2-box">
+            <h3>Our Misson</h3>
+            <p>To be the best food delivering service in the country!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="team">
+        <div class="row g-5">
+          <h1>Our Team</h1>
+          <div class="col-lg-4">
+            <div class="card">
+              <img src="images/about/almir.jpg" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">Amaan Al Mir</h5>
+                <p class="card-text">Developer</p>
+                <div class="profile-links">
+                  <a href=""><i class="fab fa-linkedin"></i></a>
+                  <a href=""><i class="fab fa-facebook-square"></i></a>
+                  <a href=""><i class="fab fa-twitter-square"></i></a>
+                  <a href=""><i class="fab fa-instagram-square"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="card">
+              <img src="images/about/ayoub.jpg" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">Ayoub</h5>
+                <p class="card-text">Developer</p>
+                <div class="profile-links">
+                  <a href=""><i class="fab fa-linkedin"></i></a>
+                  <a href=""><i class="fab fa-facebook-square"></i></a>
+                  <a href=""><i class="fab fa-twitter-square"></i></a>
+                  <a href=""><i class="fab fa-instagram-square"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="card">
+              <img src="images/about/alex.jpg" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">Alex</h5>
+                <p class="card-text">Developer</p>
+                <div class="profile-links">
+                  <a href=""><i class="fab fa-linkedin"></i></a>
+                  <a href=""><i class="fab fa-facebook-square"></i></a>
+                  <a href=""><i class="fab fa-twitter-square"></i></a>
+                  <a href=""><i class="fab fa-instagram-square"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="card">
+              <img src="images/avatar.jpg" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">Daffa</h5>
+                <p class="card-text">Developer</p>
+                <div class="profile-links">
+                  <a href=""><i class="fab fa-linkedin"></i></a>
+                  <a href=""><i class="fab fa-facebook-square"></i></a>
+                  <a href=""><i class="fab fa-twitter-square"></i></a>
+                  <a href=""><i class="fab fa-instagram-square"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="card">
+              <img src="images/about/khalifa.jpg" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">Khalifa</h5>
+                <p class="card-text">Developer</p>
+                <div class="profile-links">
+                  <a href=""><i class="fab fa-linkedin"></i></a>
+                  <a href=""><i class="fab fa-facebook-square"></i></a>
+                  <a href=""><i class="fab fa-twitter-square"></i></a>
+                  <a href=""><i class="fab fa-instagram-square"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+  <!--===== ABOUT SECTION - END =====-->
+
+  <div class="about-foot">
+    <h5>Follow Us Today!</h5>
+    <h2 class="text-warning">@GrubKing</h2>
+  </div>
+
+  <!--===== PAGE FOOTER =====-->
+  <footer class="bg-warning py-5">
+    <div class="container">
+      <img src="images/gk.png">
+      <h2>GrubKing</h2>
+      <div class="socialMedia">
+        <a href="https://www.facebook.com/aptechqatar"><i class="fab fa-facebook fa-3x"></i></a>
+        <a href="https://twitter.com/aptechqatar"><i class="fab fa-twitter fa-3x"></i></a>
+        <a href="https://www.instagram.com/aptechqatar/"><i class="fab fa-instagram fa-3x"></i></a>
+        <a href="https://api.whatsapp.com/send/?phone=+97433013399&text=Message+us%21"><i
+            class="fab fa-whatsapp fa-3x"></i></a>
+      </div>
+      <span>
+        &copy; 2021 Designed by <strong><span>Aptech Qatar Warriors</span></strong>
+      </span>
+    </div>
+  </footer>
+  <!--===== PAGE FOOTER - END =====-->
+
+  <!--===== SCROLLING TICKER =====-->
+  <marquee class="bg-dark" behavior="scroll" direction="left">
+    <p><span id="visitors"></span> <span id="scrollingTicker"></span> <span id="mylocation"></span>
+    </p>
+  </marquee>
+  <!--===== SCROLLING TICKER - END =====-->
+
+  <!-- SCRIPTS -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/isotope.pkgd.min.js"></script>
+
+  <script async src="https://cdn.snipcart.com/themes/v3.1.0/default/snipcart.js"></script>
+  <div id="snipcart" data-config-modal-style="side"
+    data-api-key="MGM4MzA3ZjktMGRhYS00ZjU4LTllYzMtYTYzMjFlNGJjMzA2NjM3NTQ4Mzc2OTI4Njc1MjU5" hidden></div>
+
+  <script src="assets/js/script.js"></script>
+  <!-- SCRIPTS - END -->
+</body>
+
+</html>

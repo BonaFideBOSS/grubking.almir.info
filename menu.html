@@ -1,0 +1,1905 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+
+  <link rel="preconnect" href="https://app.snipcart.com">
+  <link rel="preconnect" href="https://cdn.snipcart.com">
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.1.0/default/snipcart.css" />
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- CSS - END -->
+
+  <title>GrubKing - Menu</title>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <!--===== NAVIGATION BAR =====-->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+    <div class="container-fluid fs-3">
+
+      <a class="navbar-brand fs-3" href="index.html"><img src="images/gk.png"></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmob"
+        aria-controls="navmob" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navmob">
+        <div class="navbar-nav mr-auto">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link active" href="menu.html">Menu</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </div>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navmob">
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" id="loginBtn" href="" data-bs-toggle="modal" data-bs-target="#userLoginPortal">Login</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="displayUser" role="button" data-bs-toggle="dropdown">Username</a>
+            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end" aria-labelledby="logout">
+              <a href="" class="dropdown-item" onclick="logout()">Log Out</a>
+            </ul>
+          </li>
+        </div>
+      </div>
+    </div>
+    </div>
+  </nav>
+  <!--===== NAVIGATION BAR - END =====-->
+
+  <!--===== USER LOGIN FORM =====-->
+  <div class="modal fade" id="userLoginPortal" tabindex="-1" aria-labelledby="userLoginModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="userLoginModal">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form id="login-form" class="needs-validation" onsubmit="return false">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="username" minlength="4" placeholder=" " required>
+              <label for="username">Username</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="userpassword" placeholder=" ">
+              <label for="userpassword">Password (optional)</label>
+            </div>
+            <button type="submit" class="btn btn-danger" onclick="login()">Log in</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WELCOME MODAL -->
+  <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <div class="f-modal-alert">
+            <div class="f-modal-icon f-modal-success animate">
+              <span class="f-modal-line f-modal-tip animateSuccessTip"></span>
+              <span class="f-modal-line f-modal-long animateSuccessLong"></span>
+              <div class="f-modal-placeholder"></div>
+              <div class="f-modal-fix"></div>
+            </div>
+          </div>
+          <h1>WELCOME!</h1>
+          <h6>You Are Logged in!</h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Okay!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--===== USER LOGIN FORM - END =====-->
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <img src="images/hero/hero-menu.jpg">
+  </section>
+  <!-- HERO SECTION - END -->
+
+  <!-- MENU SECTION -->
+  <section class="menu">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-2 align-self-center">
+          <img src="images/menu/menu.png" width="100%">
+        </div>
+        <div class="col-lg-10">
+          <div class="input-group my-5">
+            <input type="text" class="menu-search form-control bg-dark" placeholder="Search" autocomplete="on">
+            <span class="input-group-text bg-dark"><i class="fas fa-search fa-lg"></i></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESTAURANT FILTER -->
+      <div class="row g-5">
+        <div class="col-lg-12">
+          <div class="restaurants">
+            <div class="menu-filter" data-filter-group="resturants">
+              <h4>Resturants</h4>
+              <div class="row g-3">
+                <div class="col-lg-12 pt-3 pb-5">
+                  <button type="button" class="btn btn-dark active fs-3" data-filter="*">All</button>
+                </div>
+                <div class="col-4 col-lg-2">
+                  <button type="button" class="btn" data-filter=".mcdonalds">
+                    <img src="images/menu/restaurant-logos/mcdonalds.png" />
+                  </button>
+                </div>
+                <div class="col-4 col-lg-2">
+                  <button type="button" class="btn" data-filter=".burgerking">
+                    <img src="images/menu/restaurant-logos/burgerking.png" />
+                  </button>
+                </div>
+                <div class="col-4 col-lg-2">
+                  <button type="button" class="btn" data-filter=".afghanbrothers">
+                    <img src="images/menu/restaurant-logos/afghanbrothers.png" />
+                  </button>
+                </div>
+                <div class="col-4 col-lg-2">
+                  <button type="button" class="btn" data-filter=".hotcold">
+                    <img src="images/menu/restaurant-logos/hotncool.png" />
+                  </button>
+                </div>
+                <div class="col-4 col-lg-2">
+                  <button type="button" class="btn" data-filter=".subway">
+                    <img src="images/menu/restaurant-logos/subway.png" />
+                  </button>
+                </div>
+                <div class="col-4 col-lg-2">
+                  <button type="button" class="btn" data-filter=".paprika">
+                    <img src="images/menu/restaurant-logos/paprika.png" />
+                  </button>
+                </div>
+                <div class="col-4 col-lg-2">
+                  <button type="button" class="btn" data-filter=".indian">
+                    <img src="images/menu/restaurant-logos/indian.png" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- RESTAURANT FILTER - END -->
+
+        <!-- FILTER CATEGORIES -->
+        <div class="col-4 col-lg-2">
+          <div class="menuFilters">
+            <h4>Categories</h4>
+            <div class="menu-filter btn-group-vertical" data-filter-group="cuisines">
+              <button type="button" class="btn btn-dark active" data-filter="*">All</button>
+              <button type="button" class="btn btn-dark" data-filter=".breakfast">Breakfast</button>
+              <button type="button" class="btn btn-dark" data-filter=".lunch">Lunch</button>
+              <button type="button" class="btn btn-dark" data-filter=".dinner">Dinner</button>
+              <button type="button" class="btn btn-dark" data-filter=".american">American</button>
+              <button type="button" class="btn btn-dark" data-filter=".arabian">Arabian</button>
+              <button type="button" class="btn btn-dark" data-filter=".indian">Indian</button>
+              <button type="button" class="btn btn-dark" data-filter=".italian">Italian</button>
+              <button type="button" class="btn btn-dark" data-filter=".veg">Vegetarian</button>
+              <button type="button" class="btn btn-dark" data-filter=".nonveg">Non-Vegetarian</button>
+              <button type="button" class="btn btn-dark" data-filter=".chicken">Chicken</button>
+              <button type="button" class="btn btn-dark" data-filter=".beef">Beef</button>
+              <button type="button" class="btn btn-dark" data-filter=".fish">Fish</button>
+              <button type="button" class="btn btn-dark" data-filter=".lamb">Lamb</button>
+              <button type="button" class="btn btn-dark" data-filter=".turkey">Turkey</button>
+              <button type="button" class="btn btn-dark" data-filter=".burger">Burger</button>
+              <button type="button" class="btn btn-dark" data-filter=".sandwich">Sandwich</button>
+              <button type="button" class="btn btn-dark" data-filter=".drink">Beverages</button>
+              <button type="button" class="btn btn-dark" data-filter=".icecream">Ice cream</button>
+            </div>
+          </div>
+        </div>
+        <!-- FILTER CATEGORIES - END -->
+
+        <div class="col-8 col-lg-10">
+          <div class="row menu-card g-3">
+            <div class="col-lg-4 menu-item american nonveg mcdonalds beef">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/McDonalds/mcdonalds-16.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>McRoyale Large Meal</h5>
+                  <h6 class="text-muted">McDonalds</h6>
+                  <p>Large Beef Burger</p>
+                  <h6>Price: <span class="price">$12.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="mcdonalds-16" data-item-price="12.00"
+                    data-item-url="mcdonalds-16" data-item-description="Large Beef Burger"
+                    data-item-image="images/menu/McDonalds/mcdonalds-16.jpg" data-item-name="McRoyale Large Meal">Add
+                    to cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item american nonveg mcdonalds beef">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/McDonalds/mcdonalds-17.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Chicken Bundle For 2</h5>
+                  <h6 class="text-muted">McDonalds</h6>
+                  <p>1 mcchicken sandwich, 1 chicken mac sandwich, 6 mcnuggets, 2 regular mcfries and 2 regular drinks.
+                  </p>
+                  <h6>Price: <span class="price">$24.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="mcdonalds-17" data-item-price="24.00"
+                    data-item-url="mcdonalds-17"
+                    data-item-description="1 mcchicken sandwich, 1 chicken mac sandwich, 6 mcnuggets, 2 regular mcfries and 2 regular drinks."
+                    data-item-image="images/menu/McDonalds/mcdonalds-17.jpg" data-item-name="Chicken Bundle For 2">Add
+                    to cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item lunch dinner arabian nonveg afghanbrothers fish">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/AfghanBrothers/afghan-brothers-1.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Chili GarlicFish</h5>
+                  <h6 class="text-muted">Afghan Brothers</h6>
+                  <p>Description</p>
+                  <h6>Price: <span class="price">$10.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="afghan-brothers-1"
+                    data-item-price="10.00" data-item-url="afghan-brothers-1" data-item-description=""
+                    data-item-image="images/menu/AfghanBrothers/afghan-brothers-1.jpg"
+                    data-item-name="Chili GarlicFish">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item lunch dinner arabian nonveg afghanbrothers chicken">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/AfghanBrothers/afghan-brothers-2.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Chilli Chicken</h5>
+                  <h6 class="text-muted">Afghan brothers</h6>
+                  <p>Some Afghan food.</p>
+                  <h6>Price: <span class="price">$15.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="afghan-brothers-2"
+                    data-item-price="15.00" data-item-url="afghan-brothers-2" data-item-description=""
+                    data-item-image="images/menu/AfghanBrothers/afghan-brothers-2.jpg"
+                    data-item-name="Chilli Chicken">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item lunch dinner arabian nonveg afghanbrothers chicken">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/AfghanBrothers/afghan-brothers-3.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Chicken Fried Rice</h5>
+                  <h6 class="text-muted">Afghan Brothers</h6>
+                  <p>Some Afghan food.</p>
+                  <h6>Price: <span class="price">$10.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="afghan-brothers-3"
+                    data-item-price="10.00" data-item-url="afghan-brothers-3" data-item-description=""
+                    data-item-image="images/menu/AfghanBrothers/afghan-brothers-3.jpg"
+                    data-item-name="Chicken Fried Rice">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item lunch dinner arabian nonveg afghanbrothers fish">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/AfghanBrothers/afghan-brothers-4.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Grilled Fish</h5>
+                  <h6 class="text-muted">Afghan Brothers</h6>
+                  <p>Some Afghan Food</p>
+                  <h6>Price: <span class="price">$10.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="afghan-brothers-4"
+                    data-item-price="10.00" data-item-url="afghan-brothers-4" data-item-description=""
+                    data-item-image="images/menu/AfghanBrothers/afghan-brothers-4.jpg" data-item-name="Grilled Fish">Add
+                    to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item lunch dinner arabian veg afghanbrothers">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/AfghanBrothers/afghan-brothers-5.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Vegetarian Casserole</h5>
+                  <h6 class="text-muted">Afghan Brothers</h6>
+                  <p>Some Afghan Food</p>
+                  <h6>Price: <span class="price">$10.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="afghan-brothers-5"
+                    data-item-price="10.00" data-item-url="afghan-brothers-5" data-item-description=""
+                    data-item-image="images/menu/AfghanBrothers/afghan-brothers-5.jpg"
+                    data-item-name="Vegetarian Casserole">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item arabian nonveg afghanbrothers beef">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/AfghanBrothers/afghan-brothers-6.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Roast Beef</h5>
+                  <h6 class="text-muted">Afghan Brothers</h6>
+                  <p>Some Afghan Food</p>
+                  <h6>Price: <span class="price">$10.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="afghan-brothers-6"
+                    data-item-price="10.00" data-item-url="afghan-brothers-6" data-item-description=""
+                    data-item-image="images/menu/AfghanBrothers/afghan-brothers-6.jpg" data-item-name="Roast Beef">Add
+                    to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item arabian veg afghanbrothers">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/AfghanBrothers/afghan-brothers-7.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Vegetarian Taco</h5>
+                  <h6 class="text-muted">Afghan Brothers</h6>
+                  <p>Some Afghan Food</p>
+                  <h6>Price: <span class="price">$10.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="afghan-brothers-7"
+                    data-item-price="10.00" data-item-url="afghan-brothers-7" data-item-description=""
+                    data-item-image="images/menu/AfghanBrothers/afghan-brothers-7.jpg"
+                    data-item-name="Vegetarian Taco">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item arabian veg afghanbrothers">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/AfghanBrothers/afghan-brothers-8.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Vegetable stew</h5>
+                  <h6 class="text-muted">Afghan Brothers</h6>
+                  <p>Some Afghan Food</p>
+                  <h6>Price: <span class="price">$10.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="afghan-brothers-8"
+                    data-item-price="10.00" data-item-url="afghan-brothers-8" data-item-description=""
+                    data-item-image="images/menu/AfghanBrothers/afghan-brothers-8.jpg"
+                    data-item-name="Vegetable stew">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item arabian afghanbrothers drink">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/AfghanBrothers/afghan-brothers-9.png" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Strawberry Iced blended</h5>
+                  <h6 class="text-muted">Afghan Brothers</h6>
+                  <p>Some Afghan Drink</p>
+                  <h6>Price: <span class="price">$5.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="afghan-brothers-9" data-item-price="5.00"
+                    data-item-url="afghan-brothers-9" data-item-description=""
+                    data-item-image="images/menu/AfghanBrothers/afghan-brothers-9.png"
+                    data-item-name="Strawberry Iced blended">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item arabian afghanbrothers drink">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/AfghanBrothers/afghan-brothers-10.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Soft Drink</h5>
+                  <h6 class="text-muted">Afghan Brothers</h6>
+                  <p>Some Drinks</p>
+                  <h6>Price: <span class="price">$4.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="afghan-brothers-10"
+                    data-item-price="4.00" data-item-url="afghan-brothers-10" data-item-description=""
+                    data-item-image="images/menu/AfghanBrothers/afghan-brothers-10.jpg" data-item-name="Soft Drink">Add
+                    to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item arabian nonveg hotcold chicken">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/HotAndCold/hot-cold-1.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Chicken Shawarma</h5>
+                  <h6 class="text-muted">HOT & COLD</h6>
+                  <p>Some Arabic Food</p>
+                  <h6>Price: <span class="price">$5.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="hot-cold-1" data-item-price="5.00"
+                    data-item-url="hotcold-1" data-item-description=""
+                    data-item-image="images/menu/HotAndCold/hot-cold-1.jpg" data-item-name=" Chicken Shawarma">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 menu-item arabian nonveg hotcold beef">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/HotAndCold/hot-cold-2.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Beef kabab</h5>
+                  <h6 class="text-muted">HOT & COLD</h6>
+                  <p>Some Arabic Food</p>
+                  <h6>Price: <span class="price">$10.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="hot-cold-2" data-item-price="10.00"
+                    data-item-url="hotcold-2" data-item-description=""
+                    data-item-image="images/menu/HotAndCold/hot-cold-2.jpg" data-item-name="Beef kabab">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item arabian nonveg hotcold beef">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/HotAndCold/hot-cold-3.jfif" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Beef Shawarma</h5>
+                  <h6 class="text-muted">HOT & COLD</h6>
+                  <p>Some Arabic Food</p>
+                  <h6>Price: <span class="price">$5.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="hot-cold-3" data-item-price="5.00"
+                    data-item-url="hotcold-3" data-item-description=""
+                    data-item-image="images/menu/HotAndCold/hot-cold-3.jfif" data-item-name="Beef Shawarma">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item arabian veg hotcold">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/HotAndCold/hot-cold-4.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Hummus</h5>
+                  <h6 class="text-muted">HOT & COLD</h6>
+                  <p>Some Arabic Food</p>
+                  <h6>Price: <span class="price">$5.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="hot-cold-4" data-item-price="5.00"
+                    data-item-url="hotcold-4" data-item-description=""
+                    data-item-image="images/menu/HotAndCold/hot-cold-4.jpg" data-item-name="Hummus">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item arabian veg hotcold">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/HotAndCold/hot-cold-5.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Flavourful Fries</h5>
+                  <h6 class="text-muted">HOT & COLD</h6>
+                  <p>Some Food</p>
+                  <h6>Price: <span class="price">$2.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="hot-cold-5" data-item-price="2.00"
+                    data-item-url="hotcold-5" data-item-description=""
+                    data-item-image="images/menu/HotAndCold/hot-cold-5.jpg" data-item-name="Flavourful Fries">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item arabian veg hotcold">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/HotAndCold/hot-cold-6.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Arabian Quesadilla</h5>
+                  <h6 class="text-muted">HOT & COLD</h6>
+                  <p>Some Food</p>
+                  <h6>Price: <span class="price">$5.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="hot-cold-6" data-item-price="5.00"
+                    data-item-url="hotcold-6" data-item-description=""
+                    data-item-image="images/menu/HotAndCold/hot-cold-6.jpg" data-item-name="Arabian Quesadilla">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item arabian veg hotcold">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/HotAndCold/hot-cold-7.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Vegetable Samosa</h5>
+                  <h6 class="text-muted">HOT & COLD</h6>
+                  <p>Some Arabic Food</p>
+                  <h6>Price: <span class="price">$6.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="hot-cold-7" data-item-price="6.00"
+                    data-item-url="hotcold-7" data-item-description=""
+                    data-item-image="images/menu/HotAndCold/hot-cold-7.jpg" data-item-name="Vegetable Samosa">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item arabian veg hotcold">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/HotAndCold/hot-cold-8.webp" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Vegetable Spring Rolls</h5>
+                  <h6 class="text-muted">HOT & COLD</h6>
+                  <p>Some Food</p>
+                  <h6>Price: <span class="price">$5.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="hot-cold-8" data-item-price="5.00"
+                    data-item-url="hotcold-8" data-item-description=""
+                    data-item-image="images/menu/HotAndCold/hot-cold-8.webp" data-item-name="Vegetable Spring Rolls">Add
+                    to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item arabian veg hotcold">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/HotAndCold/hot-cold-9.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Vegetable Mac & Cheese</h5>
+                  <h6 class="text-muted">HOT & COLD</h6>
+                  <p>Some Food</p>
+                  <h6>Price: <span class="price">$10.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="hot-cold-9" data-item-price="10.00"
+                    data-item-url="hotcold-9" data-item-description=""
+                    data-item-image="images/menu/HotAndCold/hot-cold-9.jpg" data-item-name="Vegetable Mac & Cheese">Add
+                    to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item arabian hotcold drink">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/HotAndCold/hot-cold-10.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Cola</h5>
+                  <h6 class="text-muted">HOT & COLD</h6>
+                  <p>Soda</p>
+                  <h6>Price: <span class="price">$1.50</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="hot-cold-10" data-item-price="10.00"
+                    data-item-url="hotcold-10" data-item-description=""
+                    data-item-image="images/menu/HotAndCold/hot-cold-10.jpg" data-item-name="Cola">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item american nonveg burgerking sandwich chicken">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/BurgerKing/burgerking-1.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Whopper Borrito</h5>
+                  <h6 class="text-muted">Burger King</h6>
+                  <p>Some Food</p>
+                  <h6>Price: <span class="price">$5.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="burgerking-1" data-item-price="5.00"
+                    data-item-url="burgerking-1" data-item-description=""
+                    data-item-image="images/menu/BurgerKing/burgerking-1.jpg" data-item-name="Whopper Borrito">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item american nonveg burgerking burger chicken">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/BurgerKing/burgerking-2.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Cheese Burger</h5>
+                  <h6 class="text-muted">Burger King</h6>
+                  <p>Some Food</p>
+                  <h6>Price: <span class="price">$5.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="burgerking-2" data-item-price="10.00"
+                    data-item-url="burgerking-2" data-item-description=""
+                    data-item-image="images/menu/BurgerKing/burgerking-2.jpg" data-item-name="Cheese Burger">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item breakfast american nonveg burgerking burger beef">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/BurgerKing/burgerking-3.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Beef Burger</h5>
+                  <h6 class="text-muted">Burger King</h6>
+                  <p>Some Food</p>
+                  <h6>Price: <span class="price">$5.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="burgerking-3" data-item-price="10.00"
+                    data-item-url="burgerking-3" data-item-description=""
+                    data-item-image="images/menu/BurgerKing/burgerking-3.jpg" data-item-name="Beef Burger">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item american nonveg burgerking burger beef">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/BurgerKing/burgerking-4.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Double Beef Burger</h5>
+                  <h6 class="text-muted">Burger King</h6>
+                  <p>Some Food</p>
+                  <h6>Price: <span class="price">$5.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="burgerking-4" data-item-price="10.00"
+                    data-item-url="burgerking-4" data-item-description=""
+                    data-item-image="images/menu/BurgerKing/burgerking-4.jpg" data-item-name="Double Beef Burger">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item american nonveg burgerking burger beef">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/BurgerKing/burgerking-5.jfif" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Grilled Beef Burger Small</h5>
+                  <h6 class="text-muted">Burger King</h6>
+                  <p>Some Food</p>
+                  <h6>Price: <span class="price">$3.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="burgerking-5" data-item-price="10.00"
+                    data-item-url="burgerking-5" data-item-description=""
+                    data-item-image="images/menu/BurgerKing/burgerking-5.jpg"
+                    data-item-name="Grilled Beef Burger Small">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item american nonveg burgerking burger beef">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/BurgerKing/burgerking-6.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Hamburger & Fries</h5>
+                  <h6 class="text-muted">Burger King</h6>
+                  <p>Fast Food</p>
+                  <h6>Price: <span class="price">$5.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="burgerking-6" data-item-price="10.00"
+                    data-item-url="burgerking-6" data-item-description=""
+                    data-item-image="images/menu/BurgerKing/burgerking-6.jpg" data-item-name="Hamburger & Fries">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item american nonveg burgerking burger beef">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/BurgerKing/burgerking-7.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Kids Meal</h5>
+                  <h6 class="text-muted">Burger King</h6>
+                  <p>Fast Food</p>
+                  <h6>Price: <span class="price">$5.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="burgerking-7" data-item-price="10.00"
+                    data-item-url="burgerking-7" data-item-description=""
+                    data-item-image="images/menu/BurgerKing/burgerking-7.jpg" data-item-name="Kids Meal">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item american nonveg burgerking burger beef">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/BurgerKing/burgerking-8.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Small Beef Burger & Fries</h5>
+                  <h6 class="text-muted">Burger King</h6>
+                  <p>Fast Food</p>
+                  <h6>Price: <span class="price">$5.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="burgerking-8" data-item-price="10.00"
+                    data-item-url="burgerking-8" data-item-description=""
+                    data-item-image="images/menu/BurgerKing/burgerking-8.jpg"
+                    data-item-name="Small Beef Burger & Fries">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item american veg burgerking burger">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/BurgerKing/burgerking-9.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Vegetable Burger</h5>
+                  <h6 class="text-muted">Burger King</h6>
+                  <p>Fast Food</p>
+                  <h6>Price: <span class="price">$5.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="burgerking-9" data-item-price="10.00"
+                    data-item-url="burgerking-9" data-item-description=""
+                    data-item-image="images/menu/BurgerKing/burgerking-9.jpg" data-item-name="Vegetable Burger">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item american nonveg burgerking beef">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/BurgerKing/burgerking-10.webp" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Zhinger</h5>
+                  <h6 class="text-muted">Burger King</h6>
+                  <p>Fast Food</p>
+                  <h6>Price: <span class="price">$5.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="burgerking-10" data-item-price="10.00"
+                    data-item-url="burgerking-10" data-item-description=""
+                    data-item-image="images/menu/BurgerKing/burgerking-10.jpg" data-item-name="Zhinger">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item breakfast indian nonveg indianres chicken">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Indian/indian-1.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Murgh Makhani</h5>
+                  <h6 class="text-muted">Indian Restaurant</h6>
+                  <p>Butter chicken with kaali daal (black lentils), naan, and green salad.</p>
+                  <h6>Price: <span class="price">$9.99</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="indian-1" data-item-price="9.99"
+                    data-item-url="indian-1"
+                    data-item-description="Butter chicken with kaali daal (black lentils), naan, and green salad."
+                    data-item-image="images/menu/Indian/indian-1.jpg" data-item-name="Murgh Makhani">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item indian nonveg indianres chicken">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Indian/indian-2.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Butter Chicken</h5>
+                  <h6 class="text-muted">Indian Restaurant</h6>
+                  <p>Butter chicken with delicious flavors of butter, cream, tomatoes, garlic, and spices, cumin, and
+                    ginger.
+                  </p>
+                  <h6>Price: <span class="price">$12.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="indian-2" data-item-price="12.00"
+                    data-item-url="indian-2"
+                    data-item-description="Butter chicken with delicious flavors of butter, cream, tomatoes, garlic, and spices, cumin, and ginger."
+                    data-item-image="images/menu/Indian/indian-2.jpg" data-item-name="Butter Chicken">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item indian nonveg indianres chicken">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Indian/indian-3.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Tandoori Chicken</h5>
+                  <h6 class="text-muted">Indian Restaurant</h6>
+                  <p>Famous Indian barbeque chicken cooked in clay oven marinated with yoghurt.</p>
+                  <h6>Price: <span class="price">$11.50</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="indian-3" data-item-price="11.50"
+                    data-item-url="indian-3"
+                    data-item-description="Famous Indian barbeque chicken cooked in clay oven marinated with yoghurt."
+                    data-item-image="images/menu/Indian/indian-3.jpg" data-item-name="Tandoori Chicken">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item indian nonveg indianres chicken">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Indian/indian-4.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Chicken Tikka Masala</h5>
+                  <h6 class="text-muted">Indian Restaurant</h6>
+                  <p>Celicious grilled chicken dish with a thick, creamy gravy that is unforgettable after the first
+                    bite. A
+                    tomato-yogurt sauce is spiced with chili, garlic, ginger, and garam masala, the ubiquitous Indian
+                    spice
+                    blend.</p>
+                  <h6>Price: <span class="price">$11.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="indian-4" data-item-price="11.00"
+                    data-item-url="indian-4" data-item-description="Celicious grilled chicken dish with a thick, creamy gravy that is unforgettable after the first bite. A
+                    tomato-yogurt sauce is spiced with chili, garlic, ginger, and garam masala, the ubiquitous Indian spice
+                    blend." data-item-image="images/menu/Indian/indian-4.jpg" data-item-name="Chicken Tikka Masala">Add
+                    to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item breakfast indian nonveg indianres chicken">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Indian/indian-5.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Chicken Vindaloo Curry</h5>
+                  <h6 class="text-muted">Indian Restaurant</h6>
+                  <p>Mild and sweetly spiced recipe for chicken vindaloo curry.</p>
+                  <h6>Price: <span class="price">$7.99</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="indian-5" data-item-price="7.99"
+                    data-item-url="indian-5"
+                    data-item-description="Mild and sweetly spiced recipe for chicken vindaloo curry."
+                    data-item-image="images/menu/Indian/indian-5.jpg" data-item-name="Chicken Vindaloo Curry">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 menu-item indian nonveg indianres lamb">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Indian/indian-6.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Rogan Josh</h5>
+                  <h6 class="text-muted">Indian Restaurant</h6>
+                  <p>Red lamb with spices such as cardamom, cumin, turmeric, and garam masala.</p>
+                  <h6>Price: <span class="price">$12.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="indian-6" data-item-price="12.00"
+                    data-item-url="indian-6"
+                    data-item-description="Red lamb with spices such as cardamom, cumin, turmeric, and garam masala."
+                    data-item-image="images/menu/Indian/indian-6.jpg" data-item-name="Rogan Josh">Add
+                    to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item breakfast indian veg indianres">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Indian/indian-7.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Malai Kofta</h5>
+                  <h6 class="text-muted">Indian Restaurant</h6>
+                  <p>Made with a mix of potatoes, carrots, beans, peas, and sweet corn, which are cooked and mashed
+                    before
+                    mixing with spices and paneer.</p>
+                  <h6>Price: <span class="price">$11.99</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="indian-7" data-item-price="11.99"
+                    data-item-url="indian-7" data-item-description="Made with a mix of potatoes, carrots, beans, peas, and sweet corn, which are cooked and mashed before
+                    mixing with spices and paneer." data-item-image="images/menu/Indian/indian-7.jpg"
+                    data-item-name="Malai Kofta">Add
+                    to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item breakfast indian veg indianres">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Indian/indian-8.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Chole</h5>
+                  <h6 class="text-muted">Indian Restaurant</h6>
+                  <p>Chickpea curry mixed with onions, and tomatoes, along with garlic and ginger pastes.</p>
+                  <h6>Price: <span class="price">$13.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="indian-8" data-item-price="13.00"
+                    data-item-url="indian-8"
+                    data-item-description="Chickpea curry mixed with onions, and tomatoes, along with garlic and ginger pastes."
+                    data-item-image="images/menu/Indian/indian-8.jpg" data-item-name="Chole">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item breakfast indian veg indianres">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Indian/indian-9.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Palak Paneer</h5>
+                  <h6 class="text-muted">Indian Restaurant</h6>
+                  <p>Spinach and cottage cheese mildly flavored dish made with spinach and cottage cheese (the paneer),
+                    along
+                    with the typical Indian spices.</p>
+                  <h6>Price: <span class="price">$10.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="indian-9" data-item-price="10.00"
+                    data-item-url="indian-9" data-item-description="Spinach and cottage cheese mildly flavored dish made with spinach and cottage cheese (the paneer), along
+                    with the typical Indian spices." data-item-image="images/menu/Indian/indian-9.jpg"
+                    data-item-name="Palak Paneer">Add
+                    to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item indian veg indianres">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Indian/indian-10.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Kaali Daal</h5>
+                  <h6 class="text-muted">Indian Restaurant</h6>
+                  <p>Black lentils with ghee (clarified butter) and asafetida (a resinous gum). Goes perfectly with
+                    butter
+                    chicken.</p>
+                  <h6>Price: <span class="price">$9.25</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="indian-10" data-item-price="9.25"
+                    data-item-url="indian-10" data-item-description="Black lentils with ghee (clarified butter) and asafetida (a resinous gum). Goes perfectly with butter
+                    chicken" data-item-image="images/menu/Indian/indian-10.jpg" data-item-name="Kaali Daal">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item indian veg indianres">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Indian/indian-11.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Papdi Chaat</h5>
+                  <h6 class="text-muted">Indian Restaurant</h6>
+                  <p>Waffers topped with potatoes and chickpeas and drizzled with a tangy, spicy, and sweet sauce.</p>
+                  <h6>Price: <span class="price">$7.99</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="indian-11" data-item-price="7.99"
+                    data-item-url="indian-11"
+                    data-item-description="Waffers topped with potatoes and chickpeas and drizzled with a tangy, spicy, and sweet sauce."
+                    data-item-image="images/menu/Indian/indian-11.jpg" data-item-name="Papdi Chaat">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item indian veg indianres">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Indian/indian-12.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Naan</h5>
+                  <h6 class="text-muted">Indian Restaurant</h6>
+                  <p>Leavened Indian flatbread that can go with everything you eat, including many popular dishes like
+                    tandoori
+                    chicken or all kinds of kebabs.</p>
+                  <h6>Price: <span class="price">$7.99</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="indian-12" data-item-price="7.99"
+                    data-item-url="indian-12" data-item-description="Leavened Indian flatbread that can go with everything you eat, including many popular dishes like tandoori
+                    chicken or all kinds of kebabs." data-item-image="images/menu/Indian/indian-12.jpg"
+                    data-item-name="Naan">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item american subway nonveg chicken sandwich">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Subway/subway-1.jpeg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Grande Buffalo Chicken Sandwich</h5>
+                  <h6 class="text-muted">Subway</h6>
+                  <p>4 slices of white cheese,lettuce,6 slices of pickles and with ranch sauce</p>
+                  <h6>Price: <span class="price">$5.23</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="subway-1" data-item-price="5.23"
+                    data-item-url="subway-1"
+                    data-item-description="4 slices of white cheese,lettuce,6 slices of pickles and with ranch sauce"
+                    data-item-image="images/menu/Subway/subway-1.jpeg"
+                    data-item-name="Grande Buffalo Chicken Sandwich">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item italian subway nonveg turkey sandwich">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Subway/subway-2.jpeg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Spicy Italian 6 Inch</h5>
+                  <h6 class="text-muted">Subway</h6>
+                  <p>Pepproni with salami</p>
+                  <h6>Price: <span class="price">$5.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="subway-2" data-item-price="5.00"
+                    data-item-url="subway-2" data-item-description="Pepproni with salami"
+                    data-item-image="images/menu/Subway/subway-2.jpeg" data-item-name="Spicy Italian 6 Inch">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item american subway nonveg turkey sandwich">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Subway/subway-3.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Turkey Breast 6 Inch</h5>
+                  <h6 class="text-muted">Subway</h6>
+                  <p>Turkey breast</p>
+                  <h6>Price: <span class="price">$5.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="subway-3" data-item-price="5.00"
+                    data-item-url="subway-3" data-item-description="Turkey breast"
+                    data-item-image="images/menu/Subway/subway-3.jpg" data-item-name="Turkey Breast 6 Inch">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item italian subway nonveg turkey sandwich">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Subway/subway-4.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Spicy Italian 12 Inch</h5>
+                  <h6 class="text-muted">Subway</h6>
+                  <p>Pepproni with salami</p>
+                  <h6>Price: <span class="price">$8.26</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="subway-4" data-item-price="8.26"
+                    data-item-url="subway-4" data-item-description="Pepproni with salami"
+                    data-item-image="images/menu/Subway/subway-4.jpg" data-item-name="Spicy Italian 12 Inch">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item american subway nonveg turkey sandwich">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Subway/subway-5.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Smoked Turkey 6 Inch</h5>
+                  <h6 class="text-muted">Subway</h6>
+                  <p>Smoked turkey</p>
+                  <h6>Price: <span class="price">$4.95</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="subway-5" data-item-price="4.95"
+                    data-item-url="subway-5" data-item-description="Smoked turkey"
+                    data-item-image="images/menu/Subway/subway-5.jpg" data-item-name="Smoked Turkey 6 Inch">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item italian subway nonveg turkey sandwich">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Subway/subway-6.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Italian B.M.T 12 Inch</h5>
+                  <h6 class="text-muted">Subway</h6>
+                  <p>Mix between smoked turkey,salami and pepperoni</p>
+                  <h6>Price: <span class="price">$4.75</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="subway-6" data-item-price="4.75"
+                    data-item-url="subway-6" data-item-description="Mix between smoked turkey,salami and pepperoni"
+                    data-item-image="images/menu/Subway/subway-6.jpg" data-item-name="Italian B.M.T 12 Inch">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item american subway nonveg beef sandwich">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Subway/subway-7.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Steak N Cheese 12 Inch</h5>
+                  <h6 class="text-muted">Subway</h6>
+                  <p>Steak n Cheese</p>
+                  <h6>Price: <span class="price">$8.20</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="subway-7" data-item-price="8.20"
+                    data-item-url="subway-7" data-item-description="Steak n Cheese"
+                    data-item-image="images/menu/Subway/subway-7.jpg" data-item-name="Steak N Cheese 12 Inch">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item american subway nonveg beef sandwich">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Subway/subway-8.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Roast Beef 12 Inch</h5>
+                  <h6 class="text-muted">Subway</h6>
+                  <p>Roast Beef</p>
+                  <h6>Price: <span class="price">$8.26</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="subway-8" data-item-price="8.26"
+                    data-item-url="subway-8" data-item-description="Roast Beef"
+                    data-item-image="images/menu/Subway/subway-8.jpg" data-item-name="Roast Beef 12 Inch">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item american subway nonveg turkey sandwich">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Subway/subway-9.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Turkey Breast 12 Inch</h5>
+                  <h6 class="text-muted">Subway</h6>
+                  <p>Turkey breast</p>
+                  <h6>Price: <span class="price">$7.90</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="subway-9" data-item-price="7.90"
+                    data-item-url="subway-9" data-item-description="Turkey breast"
+                    data-item-image="images/menu/Subway/subway-9.jpg" data-item-name="Turkey Breast 12 Inch">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item american subway nonveg chicken sandwich">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Subway/subway-10.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Chicken Teriyaki 12 Inch</h5>
+                  <h6 class="text-muted">Subway</h6>
+                  <p>Sweet chicken</p>
+                  <h6>Price: <span class="price">$7.95</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="subway-10" data-item-price="7.95"
+                    data-item-url="subway-10" data-item-description="Sweet chicken"
+                    data-item-image="images/menu/Subway/subway-10.jpg" data-item-name="Chicken Teriyaki 12 Inch">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item american subway nonveg fish sandwich">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Subway/subway-11.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Tuna 12 Inch</h5>
+                  <h6 class="text-muted">Subway</h6>
+                  <p>Tuna with mayoniese</p>
+                  <h6>Price: <span class="price">$7.95</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="subway-11" data-item-price="7.95"
+                    data-item-url="subway-11" data-item-description="Tuna with mayoniese"
+                    data-item-image="images/menu/Subway/subway-11.jpg" data-item-name="Tuna 12 Inch">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item american subway nonveg turkey sandwich">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Subway/subway-12.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Subway Melt 12 Inch</h5>
+                  <h6 class="text-muted">Subway</h6>
+                  <p>Mix between smoked turkey, turkey breast and pepperoni</p>
+                  <h6>Price: <span class="price">$7.98</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="subway-12" data-item-price="7.98"
+                    data-item-url="subway-12"
+                    data-item-description="Mix between smoked turkey,turkey breast and pepperoni"
+                    data-item-image="images/menu/Subway/subway-12.jpg" data-item-name="Subway Melt 12 Inch">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item italian subway nonveg turkey salad">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Subway/subway-13.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Spicy Italian Salad</h5>
+                  <h6 class="text-muted">Subway</h6>
+                  <p>Pepproni with salami</p>
+                  <h6>Price: <span class="price">$5.71</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="subway-13" data-item-price="5.71"
+                    data-item-url="subway-13" data-item-description="Pepproni with salami"
+                    data-item-image="images/menu/Subway/subway-13.jpg" data-item-name="Spicy Italian Salad">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item american subway nonveg chicken salad">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Subway/subway-14.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Subway Club Salad</h5>
+                  <h6 class="text-muted">Subway</h6>
+                  <p>Mix between turkey breast,smoked turkey and roast beef</p>
+                  <h6>Price: <span class="price">$5.78</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="subway-14" data-item-price="5.78"
+                    data-item-url="subway-14"
+                    data-item-description="Mix between turkey breast,smoked turkey and roast beef"
+                    data-item-image="images/menu/Subway/subway-14.jpg" data-item-name="Subway Club Salad">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item american subway nonveg beef salad">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Subway/subway-15.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Roast Beef Salad</h5>
+                  <h6 class="text-muted">Subway</h6>
+                  <p>Roast beef</p>
+                  <h6>Price: <span class="price">$5.78</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="subway-15" data-item-price="5.78"
+                    data-item-url="subway-15" data-item-description="Roast beef"
+                    data-item-image="images/menu/Subway/subway-15.jpg" data-item-name="Roast Beef Salad">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item paprika breakfast mexican nonveg fish">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Paprika/paprika-1.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Rock Shrimps</h5>
+                  <h6 class="text-muted">Paprika</h6>
+                  <p>Crispy breaded shrimps served with our dynamite sauce or buffalo sauce</p>
+                  <h6>Price: <span class="price">$12.40</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="" data-item-price="12.40"
+                    data-item-url="" data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 menu-item paprika breakfast mexican nonveg fish">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Paprika/paprika-2.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Maple Sriracha Shrimps</h5>
+                  <h6 class="text-muted">Paprika</h6>
+                  <p>Crispy breaded shrimps served with our homemade maple sriracha sauce</p>
+                  <h6>Price: <span class="price">$12.45</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="" data-item-price="12.45"
+                    data-item-url="" data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 menu-item paprika breakfast mexican nonveg chicken">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Paprika/paprika-3.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Buffalo Chicken Strips</h5>
+                  <h6 class="text-muted">Paprika</h6>
+                  <p>Breaded chicken strips served with buffalo sauce </p>
+                  <h6>Price: <span class="price">$7.16</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="" data-item-price="7.16" data-item-url=""
+                    data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 menu-item paprika breakfast american nonveg beef">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Paprika/paprika-4.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Swiss Mushroom Burger</h5>
+                  <h6 class="text-muted">Paprika</h6>
+                  <p>angus beef, burger sauce, sautéed mushroom and swiss cheese </p>
+                  <h6>Price: <span class="price">$7.98</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="" data-item-price="7.98" data-item-url=""
+                    data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 menu-item paprika breakfast american nonveg beef">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Paprika/paprika-5.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Picnic Box</h5>
+                  <h6 class="text-muted">Paprika</h6>
+                  <p>10pcs. fresh angus beef patty with burger sauce and American cheddar cheese</p>
+                  <h6>Price: <span class="price">$48.20</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="" data-item-price="48.20"
+                    data-item-url="" data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 menu-item paprika breakfast american nonveg beef sandwich">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Paprika/paprika-6.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Cheesy Overload Sandwich</h5>
+                  <h6 class="text-muted">Paprika</h6>
+                  <p>Angus Beef Patty, Cheddar Cheese, Mozzarella Cheese, Monterey Jack Cheese, Smoke Cheese Served In
+                    Sliced
+                    Bread</p>
+                  <h6>Price: <span class="price">$8.26</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="" data-item-price="8.26" data-item-url=""
+                    data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 menu-item paprika breakfast american nonveg chicken sandwich">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Paprika/paprika-7.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>The Roll</h5>
+                  <h6 class="text-muted">Paprika</h6>
+                  <p>Fillet Chicken with tomato, lettuce, cheddar cheese, burger sauce and wrapped with tortilla bread.
+                  </p>
+                  <h6>Price: <span class="price">$6.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="" data-item-price="6.00" data-item-url=""
+                    data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 menu-item paprika breakfast american nonveg beef sandwich">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Paprika/paprika-8.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Philadelphia Steak Sandwich</h5>
+                  <h6 class="text-muted">Paprika</h6>
+                  <p>Tender juicy beef tenderloin with bell pepper, onion, mayo, mushroom, mozzarella cheese, cheddar
+                    cheese and
+                    special sauce</p>
+                  <h6>Price: <span class="price">$5.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="" data-item-price="5.00" data-item-url=""
+                    data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 menu-item paprika breakfast american nonveg chicken sandwich">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Paprika/paprika-9.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Cordon Bleu</h5>
+                  <h6 class="text-muted">Paprika</h6>
+                  <p>Breaded chicken breast stuffed with beef bacon and cheddar cheese with special sauce served in
+                    tortilla
+                    bread</p>
+                  <h6>Price: <span class="price">$5.38</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="" data-item-price="5.38" data-item-url=""
+                    data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 menu-item paprika breakfast american nonveg chicken">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Paprika/paprika-10.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Flaming Mc & Cheese</h5>
+                  <h6 class="text-muted">Paprika</h6>
+                  <p>Pasta and cream, chicken with full loaded of 5 kinds of cheese topped with flaming chips. </p>
+                  <h6>Price: <span class="price">$7.30</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="" data-item-price="7.30" data-item-url=""
+                    data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 menu-item paprika breakfast lunch dinner american drink">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Paprika/paprika-11.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Pepsi</h5>
+                  <h6 class="text-muted">Paprika</h6>
+                  <p>pepsi drinks with ice</p>
+                  <h6>Price: <span class="price">$2.40</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="" data-item-price="2.40" data-item-url=""
+                    data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 menu-item paprika breakfast lunch dinner mexican drink">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Paprika/paprika-12.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Paprika Mojito</h5>
+                  <h6 class="text-muted">Paprika</h6>
+                  <p>7-up with strawberry syrup, fresh strawberry, grape juice and mint leaves and fresh strawberrye</p>
+                  <h6>Price: <span class="price">$9.22</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="" data-item-price="9.22" data-item-url=""
+                    data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 menu-item paprika breakfast lunch dinner mexican drink">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Paprika/paprika-13.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Pink Lemonade</h5>
+                  <h6 class="text-muted">Paprika</h6>
+                  <p>Lemon Juice with grenadine and simple syrups</p>
+                  <h6>Price: <span class="price">$6.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="" data-item-price="6.00" data-item-url=""
+                    data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 menu-item paprika breakfast lunch dinner mexican drink">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Paprika/paprika-14.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Blue Breezy</h5>
+                  <h6 class="text-muted">Paprika</h6>
+                  <p>redbull with curacao syrup, fresh lemon juice and mint leaves</p>
+                  <h6>Price: <span class="price">$6.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="" data-item-price="6.00" data-item-url=""
+                    data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 menu-item paprika breakfast lunch dinner mexican drink">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/Paprika/paprika-15.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Paprika Mojito</h5>
+                  <h6 class="text-muted">Paprika</h6>
+                  <p>7-up with strawberry syrup, fresh strawberry, grape juice and mint leaves and fresh strawberrye</p>
+                  <h6>Price: <span class="price">$6.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="" data-item-price="6.00" data-item-url=""
+                    data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item breakfast lunch dinner american nonveg mcdonalds burger chicken">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/McDonalds/mcdonalds-2.jpeg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>McCrispy Chicken Sandwich</h5>
+                  <h6 class="text-muted">Mcdonalds</h6>
+                  <p>Made of a juicy chicken patty topped with creamy mayo, sandwiched in a soft tasty bun. </p>
+                  <h6>Price: <span class="price">$6.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="mcdonalds-2" data-item-price="6.00"
+                    data-item-url="mcdonalds-2" data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item breakfast lunch dinner american nonveg mcdonalds burger chicken">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/McDonalds/mcdonalds-3.jpeg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Big Mac</h5>
+                  <h6 class="text-muted">Mcdonalds</h6>
+                  <p>A double layer of sear-sizzled, juicy 100% pure beef mingled with special sauce on a sesame seed
+                    bun and
+                    topped with melty American cheese, crisp lettuce, minced onions, and crisp dill pickles.</p>
+                  <h6>Price: <span class="price">$9.50</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="mcdonalds-3" data-item-price="9.50"
+                    data-item-url="mcdonalds-3" data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item breakfast lunch dinner american nonveg mcdonalds burger beef">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/McDonalds/mcdonalds-4.jpeg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Burger McDo</h5>
+                  <h6 class="text-muted">Mcdonalds</h6>
+                  <p>Our all-time classic burger made even better. Now with a beefier patty and a sweeter, tastier
+                    sauce. </p>
+                  <h6>Price: <span class="price">$5.99</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="mcdonalds-4" data-item-price="5.99"
+                    data-item-url="mcdonalds-4" data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item breakfast lunch dinner american nonveg mcdonalds burger beefr">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/McDonalds/mcdonalds-5.jpeg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Cheeseburger</h5>
+                  <h6 class="text-muted">Mcdonalds</h6>
+                  <p>100% pure beef patty seasoned with a pinch of salt and pepper, topped with a tangy pickle, chopped
+                    onions,
+                    ketchup, mustard, and a slice of melty American cheese on perfectly toasty buns.</p>
+                  <h6>Price: <span class="price">$7.99</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="mcdonalds-5" data-item-price="7.99"
+                    data-item-url="mcdonalds-5" data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item breakfast lunch dinner american nonveg mcdonalds burger beef">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/McDonalds/mcdonalds-6.jpeg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Cheeseburger Deluxe</h5>
+                  <h6 class="text-muted">Mcdonalds</h6>
+                  <p>It’s the classic cheeseburger you love, made even more tasty with tomato, lettuce, and mayo for a
+                    deluxe
+                    kick, on perfectly toasty buns.</p>
+                  <h6>Price: <span class="price">$7.99</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="mcdonalds-6" data-item-price="7.99"
+                    data-item-url="mcdonalds-6" data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item breakfast lunch dinner american nonveg mcdonalds burger fish">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/McDonalds/mcdonalds-7.jpeg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Filet-O-Fish</h5>
+                  <h6 class="text-muted">Mcdonalds</h6>
+                  <p>Fried fish filet smothered with sauce and topped with a slice of melted cheese in between steamed
+                    buns.</p>
+                  <h6>Price: <span class="price">$4.75</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="mcdonalds-7" data-item-price="4.75"
+                    data-item-url="mcdonalds-7" data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item breakfast lunch dinner american nonveg mcdonalds burger beef">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/McDonalds/mcdonalds-8.jpeg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Cheesy Burger McDo</h5>
+                  <h6 class="text-muted">Mcdonalds</h6>
+                  <p>Fried basil with minced pork, or chicken with tofu which is stir-fried with Thai basil and
+                    chillies.</p>
+                  <h6>Price: <span class="price">$4.75</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="mcdonalds-8" data-item-price="4.75"
+                    data-item-url="mcdonalds-8" data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item breakfast lunch dinner american veg mcdonalds">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/McDonalds/mcdonalds-9.jpeg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>3pc. Hotcakes</h5>
+                  <h6 class="text-muted">Mcdonalds</h6>
+                  <p>Three golden brown hotcakes with butter and the sweet flavor of maple.</p>
+                  <h6>Price: <span class="price">$4.99</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="mcdonalds-9" data-item-price="4.99"
+                    data-item-url="mcdonalds-9" data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item breakfast lunch dinner american nonveg mcdonalds beef">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/McDonalds/mcdonalds-10.jpeg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>2pc. Hotcakes with Sausage</h5>
+                  <h6 class="text-muted">Mcdonalds</h6>
+                  <p>Two golden brown hotcakes with butter and the sweet flavor of maple plus savory sausage hot off the
+                    griddle.</p>
+                  <h6>Price: <span class="price">$4.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="mcdonalds-10" data-item-price="4.00"
+                    data-item-url="mcdonalds-10" data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item breakfast lunch dinner american nonveg mcdonalds burger beef">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/McDonalds/mcdonalds-11.jpg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Sausage McMuffin with Egg</h5>
+                  <h6 class="text-muted">Mcdonalds</h6>
+                  <p>Freshly toasted English muffin, savory sausage hot off the griddle with a slice of creamy, real
+                    American
+                    cheese and a freshly cooked Grade A egg.</p>
+                  <h6>Price: <span class="price">$3.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="mcdonalds-11" data-item-price="3.00"
+                    data-item-url="mcdonalds-11" data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item breakfast lunch dinner american veg mcdonalds">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/McDonalds/mcdonalds-12.jpeg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Hash Browns</h5>
+                  <h6 class="text-muted">Mcdonalds</h6>
+                  <p>Golden brown potato patties that are crisp on the outside and moist on the inside, lightly seasoned
+                    and
+                    packed with potato goodness. </p>
+                  <h6>Price: <span class="price">$1.25</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="mcdonalds-12" data-item-price="1.25"
+                    data-item-url="mcdonalds-12" data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item breakfast lunch dinner american mcdonalds icecream">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/McDonalds/mcdonalds-13.jpeg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Hot Caramel Sundae</h5>
+                  <h6 class="text-muted">Mcdonalds</h6>
+                  <p>Creamy vanilla soft-serve ice cream, smothered with hot caramel topping. </p>
+                  <h6>Price: <span class="price">$2.25</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="mcdonalds-13" data-item-price="2.25"
+                    data-item-url="mcdonalds-13" data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item breakfast lunch dinner american mcdonalds icecream">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/McDonalds/mcdonalds-14.jpeg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>Coke McFloat</h5>
+                  <h6 class="text-muted">Mcdonalds</h6>
+                  <p>Refreshingly ice-cold Coca-Cola drink topped with creamy vanilla soft serve ice cream and hot
+                    fudge. </p>
+                  <h6>Price: <span class="price">$1.25</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="mcdonalds-14" data-item-price="1.25"
+                    data-item-url="mcdonalds-14" data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 menu-item breakfast lunch dinner american mcdonalds icecream">
+              <div class="card">
+                <div class="img-box">
+                  <img src="images/menu/McDonalds/mcdonalds-15.jpeg" class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5>McFlurry with Oreo Cookies</h5>
+                  <h6 class="text-muted">Mcdonalds</h6>
+                  <p>Chunky, chocolatey Oreo bits blended into rich soft serve ice cream; made more delicious with twice
+                    as much
+                    Oreo cookie goodness! </p>
+                  <h6>Price: <span class="price">$2.00</span></h6>
+                  <button class="snipcart-add-item btn btn-dark" data-item-id="mcdonalds-15" data-item-price="2.00"
+                    data-item-url="mcdonalds-15" data-item-description="" data-item-image="" data-item-name="">Add to
+                    cart</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- MENU SECTION - END -->
+
+  <!--===== PAGE FOOTER =====-->
+  <footer class="bg-warning py-5">
+    <div class="container">
+      <img src="images/gk.png">
+      <h2>GrubKing</h2>
+      <div class="socialMedia">
+        <a href="https://www.facebook.com/aptechqatar"><i class="fab fa-facebook fa-3x"></i></a>
+        <a href="https://twitter.com/aptechqatar"><i class="fab fa-twitter fa-3x"></i></a>
+        <a href="https://www.instagram.com/aptechqatar/"><i class="fab fa-instagram fa-3x"></i></a>
+        <a href="https://api.whatsapp.com/send/?phone=+97433013399&text=Message+us%21"><i
+            class="fab fa-whatsapp fa-3x"></i></a>
+      </div>
+      <span>
+        &copy; 2021 Designed by <strong><span>Aptech Qatar Warriors</span></strong>
+      </span>
+    </div>
+  </footer>
+  <!--===== PAGE FOOTER - END =====-->
+
+  <!--===== SCROLLING TICKER =====-->
+  <marquee class="bg-dark" behavior="scroll" direction="left">
+    <p><span id="visitors"></span> <span id="scrollingTicker"></span> <span id="mylocation"></span>
+    </p>
+  </marquee>
+  <!--===== SCROLLING TICKER - END =====-->
+
+  <!-- SCRIPTS -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/isotope.pkgd.min.js"></script>
+
+  <script async src="https://cdn.snipcart.com/themes/v3.1.0/default/snipcart.js"></script>
+  <div id="snipcart" data-config-modal-style="side"
+    data-api-key="MGM4MzA3ZjktMGRhYS00ZjU4LTllYzMtYTYzMjFlNGJjMzA2NjM3NTQ4Mzc2OTI4Njc1MjU5" hidden></div>
+
+  <script src="assets/js/script.js"></script>
+  <!-- SCRIPTS - END -->
+</body>
+
+</html>

@@ -1,0 +1,227 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+
+  <link rel="preconnect" href="https://app.snipcart.com">
+  <link rel="preconnect" href="https://cdn.snipcart.com">
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.1.0/default/snipcart.css" />
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- CSS - END -->
+
+  <title>GrubKing - Contact</title>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <!--===== NAVIGATION BAR =====-->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+    <div class="container-fluid fs-3">
+
+      <a class="navbar-brand fs-3" href="index.html"><img src="images/gk.png"></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmob"
+        aria-controls="navmob" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navmob">
+        <div class="navbar-nav mr-auto">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="menu.html">Menu</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link active" href="contact.html">Contact</a>
+        </div>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navmob">
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" id="loginBtn" href="" data-bs-toggle="modal" data-bs-target="#userLoginPortal">Login</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="displayUser" role="button" data-bs-toggle="dropdown">Username</a>
+            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end" aria-labelledby="logout">
+              <a href="" class="dropdown-item" onclick="logout()">Log Out</a>
+            </ul>
+          </li>
+        </div>
+      </div>
+    </div>
+    </div>
+  </nav>
+  <!--===== NAVIGATION BAR - END =====-->
+
+  <!--===== USER LOGIN FORM =====-->
+  <div class="modal fade" id="userLoginPortal" tabindex="-1" aria-labelledby="userLoginModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="userLoginModal">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form id="login-form" class="needs-validation" onsubmit="return false">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="username" minlength="4" placeholder=" " required>
+              <label for="username">Username</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="userpassword" placeholder=" ">
+              <label for="userpassword">Password (optional)</label>
+            </div>
+            <button type="submit" class="btn btn-danger" onclick="login()">Log in</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WELCOME MODAL -->
+  <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <div class="f-modal-alert">
+            <div class="f-modal-icon f-modal-success animate">
+              <span class="f-modal-line f-modal-tip animateSuccessTip"></span>
+              <span class="f-modal-line f-modal-long animateSuccessLong"></span>
+              <div class="f-modal-placeholder"></div>
+              <div class="f-modal-fix"></div>
+            </div>
+          </div>
+          <h1>WELCOME!</h1>
+          <h6>You Are Logged in!</h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Okay!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--===== USER LOGIN FORM - END =====-->
+
+  <!--===== HERO SECTION =====-->
+  <section class="hero">
+    <img src="images/hero/hero-contact.jpg">
+    <h1>Contact Us</h1>
+  </section>
+  <!--===== HERO SECTION - END =====-->
+
+
+  <!-- CONTACT SECTION -->
+  <section class="contact">
+
+    <!-- GOOGLE MAP LOCATION -->
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.486910686228!2d51.54063441544951!3d25.25420103558171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45cf910e08feb3%3A0xd4aa7a447cd2c7d0!2sAptech%20Qatar%20Computer%20Education%20Centre!5e0!3m2!1sen!2sqa!4v1617927551802!5m2!1sen!2sqa"
+        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <!-- GOOGLE MAP LOCATION - END -->
+
+    <div class="container text-center">
+      <div class="my-5">
+        <h1>How may we help you?</h1>
+        <h5>Our agents are available 24x7 to make sure that all your issues and inquiries are resolved.</h5>
+      </div>
+      <div class="row g-5 my-5">
+        <div class="col-lg-4">
+          <div class="email">
+            <h2><i class="fas fa-envelope"></i> Email</h2>
+            <p>Enquiry: enquiry@aptechqatar.com</p>
+            <p>Support: amaanalmir@gmail.com</p>
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="phone">
+            <h2><i class="fas fa-phone-alt"></i> Phone</h2>
+            <p>Tel: +974 4444 3600</p>
+            <p>Mob: + 974 4467 3399</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="location">
+            <h2><i class="fas fa-map-marker-alt"></i> Location</h2>
+            <p>OFFICE NO. 200-70, SECOND FLOOR,<br>
+              AL APTECH BUILDING - NO.10,<br>
+              AL MATAR STREET, ZONE 50,<br>
+              QATAR</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACT FORM -->
+      <form class="needs-validation">
+        <div class="row">
+          <div class="col-md">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="username" minlength="4" placeholder=" " required>
+              <label for="username">Name</label>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="useremail" placeholder=" " required>
+              <label for="useremail">Email</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-floating mb-3">
+          <textarea class="form-control" id="floatingTextarea2" minlength="15" placeholder=" " style="height: 200px"
+            required></textarea>
+          <label for="floatingTextarea2">Message</label>
+        </div>
+        <button class="btn btn-dark" type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+      </form>
+      <!-- CONTACT FORM - END -->
+    </div>
+  </section>
+  <!--===== CONTACT SECTION- END =====-->
+
+  <footer class="bg-warning py-5">
+    <div class="container">
+      <img src="images/gk.png">
+      <h2>GrubKing</h2>
+      <div class="socialMedia">
+        <a href="https://www.facebook.com/aptechqatar"><i class="fab fa-facebook fa-3x"></i></a>
+        <a href="https://twitter.com/aptechqatar"><i class="fab fa-twitter fa-3x"></i></a>
+        <a href="https://www.instagram.com/aptechqatar/"><i class="fab fa-instagram fa-3x"></i></a>
+        <a href="https://api.whatsapp.com/send/?phone=+97433013399&text=Message+us%21"><i
+            class="fab fa-whatsapp fa-3x"></i></a>
+      </div>
+      <span>
+        &copy; 2021 Designed by <strong><span>Aptech Qatar Warriors</span></strong>
+      </span>
+    </div>
+  </footer>
+  <!--===== PAGE FOOTER - END =====-->
+
+  <!--===== SCROLLING TICKER =====-->
+  <marquee class="bg-dark" behavior="scroll" direction="left">
+    <p><span id="visitors"></span> <span id="scrollingTicker"></span> <span id="mylocation"></span>
+    </p>
+  </marquee>
+  <!--===== SCROLLING TICKER - END =====-->
+
+  <!-- SCRIPTS -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/isotope.pkgd.min.js"></script>
+
+  <script async src="https://cdn.snipcart.com/themes/v3.1.0/default/snipcart.js"></script>
+  <div id="snipcart" data-config-modal-style="side"
+    data-api-key="MGM4MzA3ZjktMGRhYS00ZjU4LTllYzMtYTYzMjFlNGJjMzA2NjM3NTQ4Mzc2OTI4Njc1MjU5" hidden></div>
+
+  <script src="assets/js/script.js"></script>
+  <!-- SCRIPTS - END -->
+</body>
+
+</html>

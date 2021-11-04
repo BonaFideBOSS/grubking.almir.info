@@ -1,0 +1,598 @@
+/*==================================
+  # GENERAL
+  ==================================*/
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D90015;
+}
+
+::-webkit-scrollbar-track {
+  background: #212529;
+}
+
+a {
+  color: #D90015;
+}
+
+a:hover {
+  color: #111;
+}
+
+/*==================================
+  # WELCOME BOX
+  ==================================*/
+.f-modal-alert .f-modal-icon {
+  border-radius: 50%;
+  border: 4px solid gray;
+  box-sizing: content-box;
+  height: 80px;
+  margin: 20px auto;
+  padding: 0;
+  position: relative;
+  width: 80px;
+}
+
+.f-modal-alert .f-modal-icon.f-modal-success,
+.f-modal-alert .f-modal-icon.f-modal-error {
+  border-color: #A5DC86;
+}
+
+.f-modal-alert .f-modal-icon.f-modal-success:after,
+.f-modal-alert .f-modal-icon.f-modal-success:before,
+.f-modal-alert .f-modal-icon.f-modal-error:after,
+.f-modal-alert .f-modal-icon.f-modal-error:before {
+  background: #fff;
+  content: "";
+  height: 120px;
+  position: absolute;
+  transform: rotate(45deg);
+  width: 60px;
+}
+
+.f-modal-alert .f-modal-icon.f-modal-success:before,
+.f-modal-alert .f-modal-icon.f-modal-error:before {
+  border-radius: 120px 0 0 120px;
+  left: -33px;
+  top: -7px;
+  transform-origin: 60px 60px;
+  transform: rotate(-45deg);
+}
+
+.f-modal-alert .f-modal-icon.f-modal-success:after,
+.f-modal-alert .f-modal-icon.f-modal-error:after {
+  border-radius: 0 120px 120px 0;
+  left: 30px;
+  top: -11px;
+  transform-origin: 0 60px;
+  transform: rotate(-45deg);
+}
+
+.f-modal-alert .f-modal-icon.f-modal-success .f-modal-placeholder,
+.f-modal-alert .f-modal-icon.f-modal-error .f-modal-placeholder {
+  border-radius: 50%;
+  border: 4px solid rgba(165, 220, 134, 0.2);
+  box-sizing: content-box;
+  height: 80px;
+  left: -4px;
+  position: absolute;
+  top: -4px;
+  width: 80px;
+  z-index: 2;
+}
+
+.f-modal-alert .f-modal-icon.f-modal-success .f-modal-fix,
+.f-modal-alert .f-modal-icon.f-modal-error .f-modal-fix {
+  background-color: #fff;
+  height: 90px;
+  left: 28px;
+  position: absolute;
+  top: 8px;
+  transform: rotate(-45deg);
+  width: 5px;
+  z-index: 1;
+}
+
+.f-modal-alert .f-modal-icon.f-modal-success .f-modal-line,
+.f-modal-alert .f-modal-icon.f-modal-error .f-modal-line {
+  background-color: #A5DC86;
+  border-radius: 2px;
+  display: block;
+  height: 5px;
+  position: absolute;
+  z-index: 2;
+}
+
+.f-modal-alert .f-modal-icon.f-modal-success .f-modal-line.f-modal-tip,
+.f-modal-alert .f-modal-icon.f-modal-error .f-modal-line.f-modal-tip {
+  left: 14px;
+  top: 46px;
+  transform: rotate(45deg);
+  width: 25px;
+}
+
+.f-modal-alert .f-modal-icon.f-modal-success .f-modal-line.f-modal-long,
+.f-modal-alert .f-modal-icon.f-modal-error .f-modal-line.f-modal-long {
+  right: 8px;
+  top: 38px;
+  transform: rotate(-45deg);
+  width: 47px;
+}
+
+.animateSuccessTip {
+  -webkit-animation: animateSuccessTip 0.75s;
+  animation: animateSuccessTip 0.75s;
+}
+
+.animateSuccessLong {
+  -webkit-animation: animateSuccessLong 0.75s;
+  animation: animateSuccessLong 0.75s;
+}
+
+.f-modal-icon.f-modal-success.animate:after {
+  -webkit-animation: rotatePlaceholder 4.25s ease-in;
+  animation: rotatePlaceholder 4.25s ease-in;
+}
+
+@-webkit-keyframes animateSuccessTip {
+
+  0%,
+  54% {
+    width: 0;
+    left: 1px;
+    top: 19px;
+  }
+
+  70% {
+    width: 50px;
+    left: -8px;
+    top: 37px;
+  }
+
+  84% {
+    width: 17px;
+    left: 21px;
+    top: 48px;
+  }
+
+  100% {
+    width: 25px;
+    left: 14px;
+    top: 45px;
+  }
+}
+
+@keyframes animateSuccessTip {
+
+  0%,
+  54% {
+    width: 0;
+    left: 1px;
+    top: 19px;
+  }
+
+  70% {
+    width: 50px;
+    left: -8px;
+    top: 37px;
+  }
+
+  84% {
+    width: 17px;
+    left: 21px;
+    top: 48px;
+  }
+
+  100% {
+    width: 25px;
+    left: 14px;
+    top: 45px;
+  }
+}
+
+@-webkit-keyframes animateSuccessLong {
+
+  0%,
+  65% {
+    width: 0;
+    right: 46px;
+    top: 54px;
+  }
+
+  84% {
+    width: 55px;
+    right: 0;
+    top: 35px;
+  }
+
+  100% {
+    width: 47px;
+    right: 8px;
+    top: 38px;
+  }
+}
+
+@keyframes animateSuccessLong {
+
+  0%,
+  65% {
+    width: 0;
+    right: 46px;
+    top: 54px;
+  }
+
+  84% {
+    width: 55px;
+    right: 0;
+    top: 35px;
+  }
+
+  100% {
+    width: 47px;
+    right: 8px;
+    top: 38px;
+  }
+}
+
+@-webkit-keyframes rotatePlaceholder {
+
+  0%,
+  5% {
+    transform: rotate(-45deg);
+  }
+
+  100%,
+  12% {
+    transform: rotate(-405deg);
+  }
+}
+
+@keyframes rotatePlaceholder {
+
+  0%,
+  5% {
+    transform: rotate(-45deg);
+  }
+
+  100%,
+  12% {
+    transform: rotate(-405deg);
+  }
+}
+
+
+/*==================================
+  # NAVIGATION BAR
+  ==================================*/
+.navbar {
+  transition: .5s all ease-in-out;
+}
+
+.navbar img {
+  width: 4rem;
+}
+
+.nav-link {
+  color: #fff !important;
+}
+
+.nav-link:hover {
+  color: #D90015 !important;
+}
+
+.nav-link.active {
+  color: #D90015 !important;
+}
+
+.navscroll {
+  background: #fff;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175)
+}
+
+.navscroll .nav-link {
+  color: #111 !important;
+}
+
+.navscroll .nav-link.active {
+  color: #D90015 !important;
+}
+
+.navbar .dropdown-toggle::after {
+  display: none;
+}
+
+#displayUser {
+  display: none;
+}
+
+.dropdown-item:focus {
+  background: #D90015 !important;
+}
+
+/*==================================
+  # HERO SECTION
+  ==================================*/
+.hero {
+  width: 100%;
+  height: 100%;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero h1 {
+  color: #D90015;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+}
+
+/*==================================
+  # HOME PAGE
+  ==================================*/
+.home {
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+}
+
+.home .btn {
+  font-size: larger;
+  border: none !important;
+}
+
+.home .btn:hover {
+  background: #D90015;
+  color: #fff;
+}
+
+/*==================================
+  # MENU / PRODUCTS PAGE
+  ==================================*/
+.menu {
+  margin: 5rem auto;
+}
+
+.menu-search {
+  font-size: larger;
+  border: none;
+  box-shadow: none !important;
+  color: #fff !important;
+}
+
+.input-group-text {
+  border: none;
+  color: #D90015;
+}
+
+.restaurants {
+  text-align: center;
+}
+
+.restaurants .menu-filter .btn.active[data-filter="*"] {
+  background: #D90015;
+}
+
+.restaurants .menu-filter .btn.active {
+  background: blanchedalmond;
+}
+
+.restaurants img {
+  width: 100px;
+}
+
+.restaurants .btn:hover img {
+  transform: scale(1.1);
+}
+
+.menuFilters {
+  top: 7rem;
+}
+
+.menuFilters h4 {
+  text-align: center;
+}
+
+.menu-filter {
+  width: 100%;
+}
+
+.menu-filter .btn {
+  border: none;
+  box-shadow: none !important;
+}
+
+.menu-filter .btn.active {
+  background: #D90015;
+}
+
+.menu-card .btn {
+  margin-top: 1rem;
+  border: none;
+  box-shadow: none !important;
+}
+
+.menu-card .btn:hover {
+  background: #D90015;
+}
+
+.menu-card .price {
+  color: #D90015;
+}
+
+.menu-card .card .img-box {
+  overflow: hidden;
+}
+
+.menu-card .card .img-box img {
+  transition: .3s all ease-out;
+}
+
+.menu-card .card img:hover {
+  transform: scale(1.5);
+}
+
+/*==================================
+  # SNIPCART
+  ==================================*/
+.snipcart-modal__container {
+  z-index: 99999;
+}
+
+/*==================================
+  # ABOUT PAGE
+  ==================================*/
+
+.about {
+  margin: 5rem auto;
+}
+
+.facts {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.facts div div:hover {
+  transform: scale(1.05);
+}
+
+.facts h2 {
+  color: #D90015;
+  font-size: 4rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.facts h5 {
+  background: #D90015;
+  padding: .5rem 1rem;
+  border-radius: 5px;
+  color: #fff;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+}
+
+.fact2-box {
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+  border-radius: 10px;
+  align-items: center;
+  height: 150px;
+  padding: 2rem;
+}
+
+.team {
+  margin-top: 5rem;
+}
+
+.team h1 {
+  text-align: center;
+}
+
+.team .profile-links {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.about-foot {
+  color: #fff;
+  text-align: center;
+  padding: 2rem 0;
+  background: #D90015;
+}
+
+/*==================================
+  # CONTACT PAGE
+  ==================================*/
+.contact .container {
+  margin-top: 5rem;
+}
+
+.email p,
+.phone p,
+.location p {
+  margin-top: 2rem;
+  font-size: x-large;
+}
+
+.contact form {
+  margin: 5rem auto;
+}
+
+.contact form .btn {
+  width: 100%;
+  height: 5rem;
+  font-size: x-large;
+  border: none;
+}
+
+.contact form input:focus,
+.contact form textarea:focus {
+  border-color: #D90015 !important;
+  box-shadow: none !important;
+}
+
+.contact form .btn:hover {
+  background: #D90015;
+  border: none;
+  color: #FFF;
+}
+
+/*==================================
+  # SCROLLING TICKER & FOOTER
+  ==================================*/
+marquee {
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+}
+
+marquee span {
+  padding: 0 1rem;
+}
+
+footer {
+  color: #D90015;
+  font-size: 14px;
+  text-align: center;
+}
+
+footer img {
+  width: 8rem;
+  margin-bottom: 1rem;
+}
+
+.socialMedia {
+  margin: 2rem 0;
+}
+
+.socialMedia a {
+  margin: 0 1rem;
+}
+
+/*==================================
+  # RESPONSIVE SETTINGS
+  ==================================*/
+@media (max-width:990px) {
+  .navbar {
+    background: #fff;
+  }
+
+  .nav-link {
+    color: #111 !important;
+  }
+
+  .hero {
+    padding-top: 85px;
+    height: auto;
+  }
+
+  .hero img {
+    height: auto;
+  }
+}
